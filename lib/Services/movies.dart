@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import '../Model/movieModel.dart';
+import '../DataModel/movieModel.dart';
 import '../Utilities/strings.dart';
 
 class Movies {
-  final String baseUrl =
-      '${MovieAPI().domain}${MovieAPI().endPointDiscoverMovie}';
 
-  Future<List<MovieModel>> fetchMovies({required BuildContext context}) async {
+  final String baseUrl = '${MovieAPI().domain}${MovieAPI().endPointDiscoverMovie}';
+
+  Future<List<MovieModel>> fetchMovies() async {
     try {
       var url = Uri.parse(baseUrl);
       Map<String, String> headers = {
@@ -28,21 +28,11 @@ class Movies {
 
         return movies;
       } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Errore: ${response.reasonPhrase}'),
-            backgroundColor: Colors.red,
-          ),
-        );
+        print("Nulla da fetchare, errore");
         return [];
       }
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Dati non validi, riprovare. Errore: $e'),
-          backgroundColor: Colors.red,
-        ),
-      );
+      print('Errore ${e}');
       return [];
     }
   }
