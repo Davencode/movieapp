@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:movieapp/Utilities/strings.dart';
-
 import '../DataModel/movieModel.dart';
 import 'movie_detail.dart';
 
@@ -77,7 +76,8 @@ class _SearchMovieState extends State<SearchMovie> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+        resizeToAvoidBottomInset: false,
+        appBar: AppBar(
         title: const Text('Search Movie'),
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(56.0),
@@ -103,27 +103,41 @@ class _SearchMovieState extends State<SearchMovie> {
           ),
         ),
       ),
-      body: _isLoading
-          ? Center(child: CircularProgressIndicator())
-          : ListView.builder(
-        itemCount: _movies.length,
-        itemBuilder: (context, index) {
-          final MovieModel movie = _movies[index];
-          return ListTile(
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => MovieDetail(movie: movie),
-                ),
-              );
-            },
-            leading: movie.posterPath != null
-                ? Image.network('https://image.tmdb.org/t/p/w500${movie.posterPath}')
-                : null,
-            title: Text(movie.title),
-            subtitle: Text(movie.releaseDate ?? 'No release date'),
-          );
+      body: GestureDetector(
+        onTap: () {
+          FocusScope.of(context).unfocus();
         },
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              _isLoading
+                  ? const Center(child: CircularProgressIndicator())
+                  : SizedBox(
+                height: MediaQuery.of(context).size.height * 0.75, // Altezza adattiva
+                child: ListView.builder(
+                  itemCount: _movies.length,
+                  itemBuilder: (context, index) {
+                    final MovieModel movie = _movies[index];
+                    return ListTile(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => MovieDetail(movie: movie),
+                          ),
+                        );
+                      },
+                      leading: movie.posterPath != null
+                          ? Image.network('https://image.tmdb.org/t/p/w500${movie.posterPath}')
+                          : null,
+                      title: Text(movie.title),
+                      subtitle: Text(movie.releaseDate ?? 'No release date'),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

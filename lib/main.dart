@@ -32,39 +32,30 @@ class MyApp extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(top: 50.0),
           child: Scaffold(
-            body: Container(
-              color: Colors.black,
-              child: Padding(
-                padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-                child: TabBarView(
-                  children: [
-                    HomePage(),
-                    TopRatedMovie(),
-                    SearchMovie(),
-                    Settings(),
-                  ],
-                ),
-              ),
+            body: TabBarView(
+              children: [
+                HomePage(),
+                TopRatedMovie(),
+                SearchMovie(),
+                Settings(),
+              ],
             ),
-            bottomNavigationBar: SizedBox(
-              height: 80,
-              child: Material(
-                color: Colors.black,
-                child: TabBar(
-                  tabs: [
-                    Tab(icon: Icon(Icons.theaters)),
-                    Tab(icon: Icon(Icons.star_rate)),
-                    Tab(icon: Icon(Icons.search)),
-                    Tab(icon: Icon(Icons.person_pin_circle_rounded)),
-                  ],
-                  labelColor: Color(0xFFE8E462),
-                  unselectedLabelColor: Colors.blue,
-                  indicatorSize: TabBarIndicatorSize.label,
-                  indicatorPadding: EdgeInsets.only(bottom: 30.0),
-                  indicatorColor: Colors.red,
-                  labelPadding: EdgeInsets.only(bottom: 20),
-                  isScrollable: false,
-                ),
+            bottomNavigationBar: Material(
+              color: Colors.black,
+              child: TabBar(
+                tabs: [
+                  Tab(icon: Icon(Icons.theaters)),
+                  Tab(icon: Icon(Icons.star_rate)),
+                  Tab(icon: Icon(Icons.search)),
+                  Tab(icon: Icon(Icons.person_pin_circle_rounded)),
+                ],
+                labelColor: Color(0xFFE8E462),
+                unselectedLabelColor: Colors.blue,
+                indicatorSize: TabBarIndicatorSize.label,
+                indicatorPadding: EdgeInsets.only(bottom: 30.0),
+                indicatorColor: Colors.red,
+                labelPadding: EdgeInsets.only(bottom: 20),
+                isScrollable: false,
               ),
             ),
           ),
