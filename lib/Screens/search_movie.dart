@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
 import 'dart:convert';
 import 'package:movieapp/Utilities/strings.dart';
 import '../DataModel/movieModel.dart';
@@ -73,6 +74,16 @@ class _SearchMovieState extends State<SearchMovie> {
     }
   }
 
+  String formatDate(String? date) {
+    if (date == null || date.isEmpty) return 'No release date';
+    try {
+      DateTime parsedDate = DateFormat('yyyy-MM-dd').parse(date);
+      return DateFormat('dd/MM/yyyy').format(parsedDate);
+    } catch (e) {
+      return 'Invalid date';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -129,8 +140,10 @@ class _SearchMovieState extends State<SearchMovie> {
                       leading: movie.posterPath != null
                           ? Image.network('https://image.tmdb.org/t/p/w500${movie.posterPath}')
                           : null,
-                      title: Text(movie.title),
-                      subtitle: Text(movie.releaseDate ?? 'No release date'),
+                      title: Text(movie.title, style: TextStyle(fontWeight: FontWeight.bold)),
+                      subtitle: Text(
+                          formatDate(movie.releaseDate) ?? 'No release date'
+                      ),
                     );
                   },
                 ),
