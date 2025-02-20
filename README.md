@@ -1,6 +1,6 @@
-# 🎬 **MovieApp**
+# 🎬 **Moviepedia**
 
-**MovieApp** è un'applicazione mobile sviluppata in **Flutter** che permette di scoprire film in modo semplice e intuitivo. L'app utilizza il **BLoC pattern** per la gestione dello stato e si interfaccia con l'API di **TheMovieDB** per ottenere informazioni aggiornate sui film.
+**Moviepedia** è un'applicazione mobile sviluppata in **Flutter** che permette di scoprire film in modo semplice e intuitivo. L'app utilizza il **BLoC pattern** per la gestione dello stato e si interfaccia con l'API di **TheMovieDB** per ottenere informazioni aggiornate sui film.
 
 ---
 
