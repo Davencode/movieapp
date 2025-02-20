@@ -1,5 +1,3 @@
----
-
 # 🎬 **MovieApp**
 
 **MovieApp** è un'applicazione mobile sviluppata in **Flutter** che permette di scoprire film in modo semplice e intuitivo. L'app utilizza il **BLoC pattern** per la gestione dello stato e si interfaccia con l'API di **TheMovieDB** per ottenere informazioni aggiornate sui film.
@@ -60,38 +58,9 @@ movieapp/
 
 ---
 
-## 🔍 **Come iniziare**
-1. **Clona il repository:**
-```bash
-git clone https://github.com/tuo-username/movieapp.git
-cd movieapp
-```
-
-2. **Installa le dipendenze:**
-```bash
-flutter pub get
-```
-
-3. **Configura le chiavi API:**  
-   Sostituisci la tua chiave API di **TheMovieDB** nel file `movie_api_service.dart`.
-
-4. **Avvia l'app:**
-```bash
-flutter run
-```
-
----
-
 ## 💡 **Prossimi sviluppi**
-- Implementazione di una sezione "Preferiti".
+- Implementazione di una sezione "TopRated".
 - Notifiche push per nuove uscite.
 - Supporto multilingua.
 
 ---
-
-## 📄 **Licenza**
-Questo progetto è distribuito sotto la licenza MIT. Consulta il file [LICENSE](LICENSE) per maggiori dettagli.
-
----
-
-Se ti serve altro, fammi sapere! 😊
