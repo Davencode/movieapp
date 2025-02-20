@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import '../DataModel/movieModel.dart';
+import '../DataModel/movie_model.dart';
 import '../Utilities/strings.dart';
 
 class Movies {

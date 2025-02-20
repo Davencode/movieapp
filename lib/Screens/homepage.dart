@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movieapp/Screens/movie_detail.dart';
-import 'package:movieapp/Services/api_movie_db.dart';
+import 'package:movieapp/Services/authentication.dart';
 import 'package:movieapp/bloc/movie_bloc/movie_bloc.dart';
 import 'package:movieapp/bloc/movie_bloc/movie_event.dart';
 import 'package:movieapp/bloc/movie_bloc/movie_state.dart';
-import '../DataModel/movieModel.dart';
+import '../DataModel/movie_model.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

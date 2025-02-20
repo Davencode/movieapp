@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:movieapp/DataModel/movieModel.dart';
+import 'package:movieapp/DataModel/movie_model.dart';
 
 class MovieDetail extends StatelessWidget {
   final MovieModel movie;

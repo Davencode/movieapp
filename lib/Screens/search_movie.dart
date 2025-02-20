@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'dart:convert';
 import 'package:movieapp/Utilities/strings.dart';
-import '../DataModel/movieModel.dart';
+import '../DataModel/movie_model.dart';
 import 'movie_detail.dart';
 
 class SearchMovie extends StatefulWidget {

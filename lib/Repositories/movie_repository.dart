@@ -1,4 +1,4 @@
-import 'package:movieapp/DataModel/movieModel.dart';
+import 'package:movieapp/DataModel/movie_model.dart';
 import 'package:movieapp/Services/movies.dart';
 import 'package:movieapp/Utilities/strings.dart';
 import 'package:flutter/material.dart';
